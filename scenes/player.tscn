@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8l01l"]
 [ext_resource type="Texture2D" uid="uid://jcw5pfnk8p2w" path="res://assets/player.png" id="1_87sqw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_621rw"]
-size = Vector2(24, 16)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7c0aj"]
+radius = 8.0
+height = 24.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -16,4 +17,5 @@ texture = ExtResource("1_87sqw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_621rw")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7c0aj")
