@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Dispenser" load_steps=3 format=3 uid="uid://drdwe7sp4xq64"]
+
+[ext_resource type="Resource" uid="uid://cy20dqn7fuxj3" path="res://items/ingredient.tres" id="1_furf6"]
+[ext_resource type="Script" path="res://scripts/items/dispenser.gd" id="1_tg5cq"]
+
+[resource]
+script = ExtResource("1_tg5cq")
+output = ExtResource("1_furf6")
+name = "Dispenser"
+tile_source_id = 3

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://cy20dqn7fuxj3"]
+
+[ext_resource type="Script" path="res://scripts/items/ingredient.gd" id="1_exki2"]
+
+[resource]
+script = ExtResource("1_exki2")
+allowed_ingredients = Array[ExtResource("1_exki2")]([])
+name = "Ingredient"
+tile_source_id = 2
