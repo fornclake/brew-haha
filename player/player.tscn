@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://g2tegirlki4a"]
+[gd_scene load_steps=5 format=3 uid="uid://cyokcrnnnjtxv"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_8l01l"]
-[ext_resource type="Texture2D" uid="uid://jcw5pfnk8p2w" path="res://assets/player.png" id="1_87sqw"]
-[ext_resource type="Texture2D" uid="uid://bucbktc8uke3w" path="res://assets/selector.png" id="3_mor02"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_f5rkv"]
+[ext_resource type="Texture2D" uid="uid://jcw5pfnk8p2w" path="res://player/player.png" id="2_j0tgl"]
+[ext_resource type="Texture2D" uid="uid://bucbktc8uke3w" path="res://player/selector.png" id="3_3rg05"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7c0aj"]
 radius = 8.0
@@ -11,7 +11,7 @@ height = 24.0
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 y_sort_enabled = true
 motion_mode = 1
-script = ExtResource("1_8l01l")
+script = ExtResource("1_f5rkv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -20,10 +20,10 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_7c0aj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_87sqw")
+texture = ExtResource("2_j0tgl")
 
 [node name="Selector" type="Sprite2D" parent="."]
 visible = false
 top_level = true
-texture = ExtResource("3_mor02")
+texture = ExtResource("3_3rg05")
 offset = Vector2(16, 0)

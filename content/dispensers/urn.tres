@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Dispenser" load_steps=4 format=3 uid="uid://bc7bhxt14wikd"]
+
+[ext_resource type="Resource" uid="uid://blnjj2yk6a60g" path="res://content/ingredients/coffee.tres" id="1_lry2q"]
+[ext_resource type="Script" path="res://engine/items/dispenser.gd" id="1_pwyco"]
+[ext_resource type="Resource" uid="uid://1cni81n4uulg" path="res://content/dishes/mug.tres" id="2_yhsdk"]
+
+[resource]
+script = ExtResource("1_pwyco")
+output = ExtResource("1_lry2q")
+requires_ingredient = Array[Resource("res://engine/items/ingredient.gd")]([ExtResource("2_yhsdk")])
+name = "Urn"
+atlas_coords = Vector2i(0, 0)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccken0hlbk6r3"
-path="res://.godot/imported/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.ctex"
+uid="uid://ca2r3wp6xpjwk"
+path="res://.godot/imported/counters.png-e21cb37d65adc27a4280ae9ec533a1c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dispenser.png"
-dest_files=["res://.godot/imported/dispenser.png-13c08cecc0cb5c6bbef98adc8a1075c6.ctex"]
+source_file="res://tilesets/counters.png"
+dest_files=["res://.godot/imported/counters.png-e21cb37d65adc27a4280ae9ec533a1c3.ctex"]
 
 [params]
 
