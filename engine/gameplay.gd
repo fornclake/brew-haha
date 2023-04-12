@@ -2,26 +2,20 @@ class_name Main extends Node2D
 
 var map_state = {}
 
-var player_nodes : Array:
-	get: return get_tree().get_nodes_in_group("Players")
-
-var item_cells : Array:
-	get: return tiles.get_used_cells(0)
-
 @onready var tiles = $TileMap
 @onready var valid_cells = tiles.get_used_cells_by_id(1, 0, Vector2i.ZERO)
 
 
 func _ready():
 	# give all players a reference to this main scene
-	for player in player_nodes:
+	for player in get_tree().get_nodes_in_group("Players"):
 		player.main = self
 		player.interacted.connect(_interaction.bind(player))
 	
 	# add all item layer cells to map state
-	for item in item_cells:
+	for item in tiles.get_used_cells(0):
 		var tile_data : TileData = tiles.get_cell_tile_data(0, item)
-		tile_data.set_custom_data("Item", tile_data.get_custom_data("Item").duplicate())
+		tile_data.set_custom_data("Item", tile_data.get_custom_data("Item").duplicate()) # duplicate is slower than instances
 		map_state[item] = tile_data.get_custom_data("Item")
 
 
@@ -42,7 +36,7 @@ func _item_interaction(item_cell : Vector2i, player : Player):
 	if item is Ingredient:
 		player.held_item = _give_item(item_cell)
 	elif item is Dispenser and item.requires_ingredient.size() == 0:
-		player.held_item = item.output
+		player.held_item = item.output.duplicate() # duplicate is slower than instances
 
 
 func _held_item_interaction(item_cell : Vector2i, player : Player):

@@ -1,7 +1,6 @@
 class_name Ingredient extends Item
 
 @export var allowed_ingredients : Array[Ingredient]
-
 var _allowed_ingredient_names : Array[String]:
 	get:
 		var array : Array[String] = []
@@ -20,6 +19,11 @@ var _content_names : Array[String]:
 		return array
 
 
+func _ready():
+	for ingredient in allowed_ingredients:
+		_allowed_ingredient_names.append(ingredient.name)
+
+
 func can_hold(ingredient : Ingredient):
 	return true if _allowed_ingredient_names.has(ingredient.name) else false
 
@@ -31,3 +35,6 @@ func has(ingredient : Ingredient):
 func add_ingredient(ingredient : Ingredient):
 	contents.append(ingredient)
 
+
+func get_name_and_contents() -> String:
+	return str(name, " ", _content_names).replace("\"", "")

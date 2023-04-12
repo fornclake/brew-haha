@@ -10,7 +10,7 @@ var text := "":
 
 @onready var label = $Label
 
-var DIRECTIONS = {Vector2.LEFT: "Left", Vector2.RIGHT: "Right", Vector2.UP: "Up", Vector2.DOWN: "Down"}
+var DIRECTIONS = {Vector2i.LEFT: "Left", Vector2i.RIGHT: "Right", Vector2i.UP: "Up", Vector2i.DOWN: "Down"}
 
 
 func _process(_delta):
@@ -18,7 +18,11 @@ func _process(_delta):
 	
 	text += "Position: " + str(player.grid_position)
 	text += "\nDirection: " + DIRECTIONS[player.orth_direction]
-	text += "\nSelected: " + str(player.selected_cell) if player.can_interact else "\nNo tile selected"
-	text += "\nHolding " + str(player.held_item.name) if player.held_item else "\nNo held item"
-	text += "\nHeld item contents: " \
-			+ str(player.held_item._content_names).replace("\"", "") if player.held_item else ""
+	if player.can_interact:
+		text += "\nSelected: " 
+		if main.item_exists_at(player.selected_cell):
+			text += str(main.map_state[player.selected_cell].name) + " "
+		text += str(player.selected_cell)
+	else:
+		text += "\nNo cell selected"
+	text += "\nHolding: " + player.held_item.get_name_and_contents() if player.held_item else "\nNo held item"
